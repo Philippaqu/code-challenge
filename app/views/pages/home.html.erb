@@ -1,2 +1,13 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home-background">
+  <section>
+    <h1>Collect your best holiday memories</h1>
+    <h2>Upload your pictures</h2>
+  </section>
+  <section>
+
+    <button class="main-button"><%= link_to 'Log in', new_user_session_path %> </button>
+    <button class="main-button"><%= link_to 'Sign up', new_user_registration_path %></button>
+  </section>
+
+</div>
+

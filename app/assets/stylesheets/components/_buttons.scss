@@ -1,0 +1,26 @@
+.main-button{
+  margin-top: 100px;
+  height: 50px;
+  width: 120px;
+  border-radius: 0.2;
+  color: #939B91;
+  background-color: #FFFFFF;
+}
+
+
+.main-button{
+  a{
+    color: #939B91;
+    text-decoration: none;
+  }
+}
+
+.main-button:hover{
+  background-color: #709061;
+  color: #FFFFFF;
+  a{
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+}
+
