@@ -1,0 +1,24 @@
+<%= render 'shared/navbar' %>
+<div class="container">
+  <section>
+    <div class="new_memory">
+      <button class="light-button"><%= link_to 'Add memory', new_memory_path %></button>
+    </div>
+  </section>
+
+  <section>
+    <div class="all-memories">
+      <h2>Your Memories</h3>
+      <div class="thumbnail-section">
+        <div class="example" style="background-image: url('/assets/meadow.jpeg')">
+      </div>
+      <p class="header">e.g. Ireland 2013</p>
+      <!--
+        <%= @memories.each do |memory| %>
+        <%= memory %>
+        <% end %> -->
+      </div>
+    </div>
+  </section>
+</div>
+
