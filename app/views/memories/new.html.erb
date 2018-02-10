@@ -1,5 +1,6 @@
-<%= simple_form_for [@memory] do |f| %>
 
-      <%= f.input :header, placeholder: 'Austria 2015' %>
-      <%= f.submit %>
-      <% end %>
+<%= simple_form_for @memory do |f| %>
+<%= f.input :photo, as: :attachinary %>
+<%= f.input :header %>
+<%= f.submit %>
+<% end %>

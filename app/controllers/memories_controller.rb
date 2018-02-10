@@ -22,7 +22,7 @@ end
 private
 
 def memory_params
-  params.require(:memory).permit(:header)
+  params.require(:memory).permit(:header, :photo)
 end
 
 end

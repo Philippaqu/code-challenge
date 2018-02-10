@@ -40,6 +40,7 @@
         </div>
         <div class="modal-body">
           <%= simple_form_for [@memory] do |f| %>
+          <%= f.input :photo, as: :attachinary %>
           <%= f.input :header, placeholder: 'Austria 2015' %>
         </div>
         <div class="modal-footer">
@@ -49,4 +50,8 @@
      </div>
    </div>
  </div>
+
+ <!-- Footer -->
+  <%= render 'shared/footer' %>
+
 
