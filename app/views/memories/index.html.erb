@@ -1,24 +1,52 @@
 <%= render 'shared/navbar' %>
 <div class="container">
   <section>
-    <div class="new_memory">
-      <button class="light-button"><%= link_to 'Add memory', new_memory_path %></button>
-    </div>
   </section>
-
   <section>
     <div class="all-memories">
-      <h2>Your Memories</h3>
+      <h2>Your Memories</h2>
+        <div class="thumbnail-picture" style="background-image: url('/assets/meadow.jpeg')" id="example-tn">
+        </div>
+        <p class="thumbnail-header">e.g. Ireland 2013</p>
+      </div>
+    </section>
+
+    <!--Memories-->
+    <section>
       <div class="thumbnail-section">
-        <div class="example" style="background-image: url('/assets/meadow.jpeg')">
+        <% @memories.each do |memory| %>
+        <div class="col-md-2 col-xs-6 col-sm-4">
+        <div class="thumbnail-object">
+          <div class="thumbnail-picture" style="background-image: url('<%= memory.photo? ? cl_image_path(memory.photo.path) : '/assets/meadow.jpeg' %>')"></div>
+          <p class="thumbnail-header">
+            <%= memory.header %>
+          </p>
+        </div>
+        </div>
+        <% end %>
       </div>
-      <p class="header">e.g. Ireland 2013</p>
-      <!--
-        <%= @memories.each do |memory| %>
-        <%= memory %>
-        <% end %> -->
-      </div>
-    </div>
-  </section>
-</div>
+    </section>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="memoryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLongTitle">Add a Memory</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= simple_form_for [@memory] do |f| %>
+          <%= f.input :header, placeholder: 'Austria 2015' %>
+        </div>
+        <div class="modal-footer">
+         <%= f.submit 'Save', class: 'main-button' %>
+         <% end %>
+       </div>
+     </div>
+   </div>
+ </div>
 
